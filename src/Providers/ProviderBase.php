@@ -15,6 +15,9 @@ abstract class ProviderBase
 {
     protected $page;
 
+    protected $shareUrl;
+
+
     const RFC1738 = 1;
     const RFC3986 = 2;
 

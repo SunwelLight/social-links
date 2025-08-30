@@ -34,7 +34,9 @@ class Page
             throw new \Exception('Only the following fields are available:'.implode(',', array_keys($this->info)));
         }
 
-        $this->info = array_map('static::normalize', $info + $this->info);
+        $this->info = array_map(function($value) {
+            return static::normalize($value);
+        }, $info + $this->info);
 
         $this->config = $config;
     }
