@@ -79,7 +79,7 @@ abstract class ProviderBase
      * @param array  $getParams  extra parameters as $key => $value
      * @param int    $encoding   Type of encoding used. It can be static::RFC3986 or static::RFC1738
      */
-    protected function buildUrl($url, array $pageParams = null, array $getParams = array(), $encoding = self::RFC1738)
+    protected function buildUrl($url, ?array $pageParams = null, array $getParams = array(), $encoding = self::RFC1738)
     {
         if ($pageParams) {
             $getParams += $this->page->get($pageParams);
@@ -111,7 +111,7 @@ abstract class ProviderBase
      *
      * @return resource
      */
-    protected static function request($url, $post = false, array $headers = null)
+    protected static function request($url, $post = false, ?array $headers = null)
     {
         $connection = curl_init();
 
